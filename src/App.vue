@@ -1,11 +1,32 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <el-button type="fail" @click="jumpMenu">jumpMenu</el-button>
+    <!-- <router-link to="/">Home</router-link> | -->
+    <!-- <router-view></router-view> -->
+    <!-- <router-link to="/about">About</router-link> -->
   </div>
   <router-view />
 </template>
-
+<script>
+export default {
+ 
+  data() {
+    return {};
+  },
+  methods: {
+    // 跳转菜单页面
+    jumpMenu() {
+      let data = {
+        name: "menu",
+        params: {
+          username: "王万琦",
+        },
+      };
+      this.$router.push(data);
+    },
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
